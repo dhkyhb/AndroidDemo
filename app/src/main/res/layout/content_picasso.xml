@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:background="@drawable/elang"
+        tools:showIn="@layout/activity_picasso"
+        tools:context=".ui.picassoActivity">
+
+    <ScrollView
+            style="@style/widget_MatchM"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent">
+
+        <LinearLayout style="@style/widget_MatchM"
+                      android:gravity="center_horizontal"
+                      android:orientation="vertical">
+
+            <ImageView
+                    android:id="@+id/iv_showImg"
+                    style="@style/widget_WrapW"
+                    android:layout_gravity="center_horizontal"/>
+
+            <Button
+                    android:id="@+id/btn_picasso_odownload"
+                    style="@style/widget_MatchW"
+                    android:text="download_longjuan"/>
+
+            <Button
+                    android:id="@+id/btn_picasso_odownload_rotate"
+                    style="@style/widget_MatchW"
+                    android:text="download_longjuan_rotate"/>
+
+            <Button
+                    android:id="@+id/btn_picasso_odownload_rotate_xy"
+                    style="@style/widget_MatchW"
+                    android:text="download_longjuan_rotate_xy"/>
+
+            <Button
+                    android:id="@+id/btn_picasso_odownload_error"
+                    style="@style/widget_MatchW"
+                    android:text="download_ongjuan_error"/>
+
+            <Button
+                    android:id="@+id/btn_picasso_resize"
+                    style="@style/widget_MatchW"
+                    android:text="resize_ongjuan_error"/>
+
+            <Button
+                    android:id="@+id/btn_picasso_resize_centerInside"
+                    style="@style/widget_MatchW"
+                    android:text="resize_ongjuan_error_centerInside"/>
+
+            <Button
+                    android:id="@+id/btn_picasso_resize_fit"
+                    style="@style/widget_MatchW"
+                    android:text="resize_ongjuan_error_fit"/>
+
+            <Button
+                    android:id="@+id/btn_picasso_odownload_placeholer"
+                    style="@style/widget_MatchW"
+                    android:text="download_longjuan_placeholer"/>
+
+            <Button
+                    android:id="@+id/btn_acquire_bitmap_by_scale_2"
+                    style="@style/widget_MatchW"
+                    android:text="acquire_bitmap_by_scale_2"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</android.support.constraint.ConstraintLayout>

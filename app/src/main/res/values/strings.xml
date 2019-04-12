@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">AndroidDemo</string>
+    <string name="title_activity_picasso">picassoActivity</string>
+    <string name="title_activity_glide">glideActivity</string>
+</resources>

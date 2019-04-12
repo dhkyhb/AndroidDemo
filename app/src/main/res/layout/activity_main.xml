@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                             xmlns:app="http://schemas.android.com/apk/res-auto"
+                                             xmlns:tools="http://schemas.android.com/tools"
+                                             android:layout_width="match_parent"
+                                             android:layout_height="match_parent"
+                                             android:background="@drawable/mainactivity"
+                                             tools:context=".MainActivity">
+
+    <ScrollView style="@style/widget_MatchM"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout style="@style/widget_MatchM"
+        android:orientation="vertical">
+
+
+            <Button
+                    android:id="@+id/btn_turnToNotification"
+                    style="@style/widget_MatchW"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    android:text="turn to notification"/>
+
+            <Button
+                    android:id="@+id/btn_turnToretrofit"
+                    style="@style/widget_MatchW"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/btn_turnToNotification"
+                    android:text="turn to retrofit"/>
+
+            <Button
+                    android:id="@+id/btn_turnToReflect"
+                    style="@style/widget_MatchW"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/btn_turnToretrofit"
+                    android:text="turn to reflect"/>
+
+            <Button
+                    android:id="@+id/btn_turnToTinker"
+                    style="@style/widget_MatchW"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/btn_turnToReflect"
+                    android:text="turn to reflect"/>
+
+            <Button
+                    android:id="@+id/btn_turnToPicasso"
+                    style="@style/widget_MatchW"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/btn_turnToTinker"
+                    android:text="turn to picasso"/>
+
+            <Button
+                    android:id="@+id/btn_turnTohorizontalActivity"
+                    style="@style/widget_MatchW"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/btn_turnToTinker"
+                    android:text="turn to horizontalActivity"/>
+
+            <Button
+                    android:id="@+id/btn_turnToWorrkActivity"
+                    style="@style/widget_MatchW"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/btn_turnTohorizontalActivity"
+                    android:text="turn to WorrkActivity"/>
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</android.support.constraint.ConstraintLayout>
