@@ -13,8 +13,13 @@ import android.os.Bundle
 import android.provider.Settings
 import android.util.Log
 import android.view.View
+import com.example.androiddemo.androidframework.lifecycle.LifecycleActivity
+import com.example.androiddemo.androidframework.navigation.navigationActivity
+import com.example.androiddemo.androidframework.paging.PagingActivity
 import com.example.androiddemo.base.BaseActivity
+import com.example.androiddemo.eventbus.eventbusActivity
 import com.example.androiddemo.extension.logDebug
+import com.example.androiddemo.mvvm.ViewModelActivity
 import com.example.androiddemo.ui.*
 import com.example.androiddemo.ui.horizontalScroll.HorizontalScrollActivity
 import com.example.androiddemo.utils.DeviceuuidFactory
@@ -50,8 +55,24 @@ class MainActivity : BaseActivity(){
         }
         btn_turnTohorizontalActivity.setOnClickListener {
             startActivity<HorizontalScrollActivity>()
-//            startActivity<Main2Activity>()
-//            DeviceuuidFactory(this@MainActivity).deviceUuid
+        }
+        btn_turnToEventBusActivity.setOnClickListener {
+            startActivity<SmaliLogActivity>()
+        }
+        btn_turnLifecycleObserver.setOnClickListener {
+            startActivity<LifecycleActivity>()
+        }
+        btn_turnViewModel.setOnClickListener {
+            startActivity<ViewModelActivity>()
+        }
+        btn_turnPaging.setOnClickListener {
+            startActivity<PagingActivity>()
+        }
+        btn_navigation.setOnClickListener {
+            startActivity<navigationActivity>()
+        }
+        btn_shortcut.setOnClickListener {
+            startActivity<BadgeActivity>()
         }
     }
 

@@ -63,6 +63,48 @@
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/btn_turnTohorizontalActivity"
                     android:text="turn to WorrkActivity"/>
+
+            <Button
+                    android:id="@+id/btn_turnToEventBusActivity"
+                    style="@style/widget_MatchW"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/btn_turnToWorrkActivity"
+                    android:text="turn to EventBusActivity"/>
+
+            <Button
+                    android:id="@+id/btn_turnLifecycleObserver"
+                    style="@style/widget_MatchW"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/btn_turnToEventBusActivity"
+                    android:text="turn to LifecycleObserver"/>
+
+            <Button
+                    android:id="@+id/btn_turnViewModel"
+                    style="@style/widget_MatchW"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/btn_turnLifecycleObserver"
+                    android:text="turn to ViewModel"/>
+
+            <Button
+                    android:id="@+id/btn_turnPaging"
+                    style="@style/widget_MatchW"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/btn_turnViewModel"
+                    android:text="turn to Paging"/>
+
+            <Button
+                    android:id="@+id/btn_navigation"
+                    style="@style/widget_MatchW"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/btn_turnPaging"
+                    android:text="turn to navigation"/>
+
+            <Button
+                    android:id="@+id/btn_shortcut"
+                    style="@style/widget_MatchW"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/btn_turnPaging"
+                    android:text="turn to shortCut"/>
         </LinearLayout>
 
     </ScrollView>

@@ -13,7 +13,17 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            android:focusable="false"
             android:text="13856474956"
+    />
+
+    <cn.cloudcore.iprotect.plugin.CEditText
+            android:id="@+id/ceditText"
+            app:layout_constraintTop_toBottomOf="@+id/et_tel"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
     />
 
     <Button

@@ -19,7 +19,7 @@ class TinkerActivity : BaseActivity() {
         btn_start_tinker.setOnClickListener {
             var str:String? = null
 //            logInfo("This is a bug class, str size is " + str!!.length)
-            toast("this is fix class")
+            toast("this is fix class 2")
         }
     }
 }

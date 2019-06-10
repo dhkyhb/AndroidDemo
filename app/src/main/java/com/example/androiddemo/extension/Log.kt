@@ -35,7 +35,7 @@ private const val ERROR = 5
 private const val NOTHING = 6
 
 //    private val level = VERBOSE;
-private val level = if (APPSet.isDebug) DEBUG else WARN
+private val level = if (APPSet.isDebug) NOTHING else VERBOSE
 
 fun Any.logVerbose(msg: String?) {
     if (level <= VERBOSE) {

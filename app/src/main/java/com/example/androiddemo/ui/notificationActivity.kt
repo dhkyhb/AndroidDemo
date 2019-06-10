@@ -11,8 +11,10 @@ import android.os.Build
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.Settings
+import android.support.v4.app.NotificationCompat
 import android.view.View
 import com.example.androiddemo.R
+import com.example.androiddemo.ui.shortcut.shortCutUtils
 import kotlinx.android.synthetic.main.activity_notification.*
 
 class notificationActivity : AppCompatActivity(), View.OnClickListener{
@@ -64,9 +66,12 @@ class notificationActivity : AppCompatActivity(), View.OnClickListener{
             .setContentTitle("这是一个测试Title")
             .setSmallIcon(R.mipmap.ic_launcher)
             .setLargeIcon(BitmapFactory.decodeResource(resources, R.mipmap.ic_launcher))
+            .setBadgeIconType(NotificationCompat.BADGE_ICON_SMALL)
+//            .setNumber(6)
             .setAutoCancel(true)
             .build()
         manager!!.notify(1, notification)
+        shortCutUtils.changedMiUiShortCut(notification, 8)
     }
 
 }

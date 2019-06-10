@@ -1,8 +1,15 @@
 package com.example.androiddemo.ui
 
+import android.os.Build
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.util.Log
+import android.view.MotionEvent
+import android.view.View
+import android.widget.EditText
+import cn.cloudcore.iprotect.plugin.CKbdActivity
 import com.example.androiddemo.R
 import com.example.androiddemo.base.*
 import com.example.androiddemo.extension.acquireRetrofitIns
@@ -10,6 +17,7 @@ import com.example.androiddemo.extension.doInBackground
 import com.example.androiddemo.extension.logDebug
 import com.example.androiddemo.retrofit.interceptor.HeadersInterceptor
 import com.example.androiddemo.services.*
+import com.example.androiddemo.utils.AttrsUtils
 import com.example.androiddemo.utils.MD5Utils
 import com.google.gson.Gson
 import kotlinx.android.synthetic.main.activity_work_net.*
@@ -17,6 +25,7 @@ import okhttp3.*
 import okhttp3.logging.HttpLoggingInterceptor
 import org.json.JSONObject
 import java.io.IOException
+import java.lang.reflect.InvocationTargetException
 import java.util.concurrent.TimeUnit
 
 class WorkNetActivity : AppCompatActivity() {
@@ -32,10 +41,61 @@ class WorkNetActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_work_net)
 
+        et_tel.setOnTouchListener(object: View.OnTouchListener{
+            override fun onTouch(v: View?, event: MotionEvent?): Boolean {
+                //隐藏输入法，显示光标
+                val et = v as EditText
+                val inType = et.inputType // back up the input type
+                if (Build.VERSION.SDK_INT >= 11) {
+                    val cls = EditText::class.java
+                    try {
+                        val setShowSoftInputOnFocus =
+                            cls.getMethod("setShowSoftInputOnFocus", Boolean::class.javaPrimitiveType)
+                        setShowSoftInputOnFocus.isAccessible = false
+                        setShowSoftInputOnFocus.invoke(et, false)
+                    } catch (e: NoSuchMethodException) {
+                        e.printStackTrace()
+                    } catch (e: IllegalArgumentException) {
+                        e.printStackTrace()
+                    } catch (e: IllegalAccessException) {
+                        e.printStackTrace()
+                    } catch (e: InvocationTargetException) {
+                        e.printStackTrace()
+                    }
+
+                } else {
+                    et.inputType = android.text.InputType.TYPE_NULL // disable soft input
+                    et.inputType = inType
+
+                }
+                keyBoard()
+                return false
+            }
+        })
+
         btn_sendSMS.setOnClickListener {
-            sendSMS(et_tel.text.toString())
-//            sendSMS2(et_tel.text.toString())
+//            sendSMS(et_tel.text.toString())
+            sendSMS2(et_tel.text.toString())
         }
+    }
+
+    private fun keyBoard() {
+        val attrSet = AttrsUtils.getQueryAttrSet("passwrod")
+        ceditText.initialize(attrSet)
+        ceditText.addTextChangedListener(object: TextWatcher{
+            override fun afterTextChanged(s: Editable?) {
+                et_tel.text = s
+            }
+
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+
+            }
+
+        })
     }
 
     private fun sendSMS(tel: String) {

@@ -5,6 +5,7 @@ import com.example.androiddemo.bean.juheBean.*
 import com.example.androiddemo.utils.DataUtils
 import io.reactivex.Observable
 import io.reactivex.Observer
+import retrofit2.Call
 import retrofit2.http.*
 
 interface juheServices {
@@ -15,7 +16,11 @@ interface juheServices {
     @POST("todayOnhistory/queryDetail.php")
     fun acquireHistoryTodayI(@Query("e_id") e_id : String, @Query("key") key : String = HISTORYTODAYKEY) : Observable<RequestResult<ResultId>>
 
+
     @POST(NBAGANME)
     fun acquireNBAGameI(@Query("key") key : String = NBAKEY) : Observable<RequestResult<NbaResult>>
+
+    @POST(NBAGANME)
+    fun acquireNBAGameCall(@Query("key") key : String = NBAKEY) : Call<RequestResult<NbaResult>>
 
 }

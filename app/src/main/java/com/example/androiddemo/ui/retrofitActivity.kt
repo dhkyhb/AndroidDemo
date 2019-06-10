@@ -38,7 +38,6 @@ class retrofitActivity : AppCompatActivity() {
             .setConfig(config)
             .createaService(juheServices::class.java)
             .acquireNBAGameI()
-
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe(object : baseObserver<RequestResult<NbaResult>>(){
